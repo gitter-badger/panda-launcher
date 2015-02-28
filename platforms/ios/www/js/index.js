@@ -4,7 +4,6 @@ var app = {
         this.address.value = localStorage.getItem('address') || '127.0.0.1:3000';
 
         $(document).on('deviceready', this.ready.bind(this));
-        $(document).on('ready', this.ready.bind(this));
     },
 
     ready: function() {
@@ -27,7 +26,7 @@ var app = {
 
     onSuccess: function(address) {
         window.plugins.insomnia.keepAwake();
-        window.location = address + '?' + Date.now();
+        window.location = address + '/dev.html?platform=' + device.platform + '&model=' + device.model + '&' + Date.now();
     },
 
     connect: function(event) {
@@ -42,14 +41,20 @@ var app = {
         $('#status').show();
         $('#status').html('Connecting...');
 
-        address = 'http://' + address.replace('http://', '') + '/dev.html';
+        address = 'http://' + address.replace('http://', '');
 
         setTimeout(this.startConnecting.bind(this, address), 200);
     },
 
     startConnecting: function(address) {
         $.ajax({
-            url: address,
+            type: 'POST',
+            url: address + '/register',
+            data: JSON.stringify({
+                platform: device.platform,
+                model: device.model
+            }),
+            contentType: 'application/json',
             timeout: 8000,
             success: this.onSuccess.bind(this, address),
             error: this.onError.bind(this)

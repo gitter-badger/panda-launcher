@@ -11,6 +11,10 @@
                         {
                             "xml": "<feature name=\"Insomnia\"><param name=\"android-package\" value=\"nl.xservices.plugins.Insomnia\" /></feature>",
                             "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"Device\"><param name=\"android-package\" value=\"org.apache.cordova.device.Device\" /></feature>",
+                            "count": 1
                         }
                     ]
                 }
@@ -20,6 +24,9 @@
     "installed_plugins": {
         "nl.x-services.plugins.insomnia": {
             "PACKAGE_NAME": "io.cordova.hellocordova"
+        },
+        "org.apache.cordova.device": {
+            "PACKAGE_NAME": "net.pandajs.launcher"
         }
     },
     "dependent_plugins": {}

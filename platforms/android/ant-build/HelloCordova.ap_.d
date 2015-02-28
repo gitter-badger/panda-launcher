@@ -241,6 +241,9 @@
 /Users/eemelikelokorpi/Sites/panda.js-launcher/platforms/android/assets/www/js/index.js \
 /Users/eemelikelokorpi/Sites/panda.js-launcher/platforms/android/assets/www/js/zepto.min.js \
 /Users/eemelikelokorpi/Sites/panda.js-launcher/platforms/android/assets/www/plugins/nl.x-services.plugins.insomnia \
+/Users/eemelikelokorpi/Sites/panda.js-launcher/platforms/android/assets/www/plugins/org.apache.cordova.device \
 /Users/eemelikelokorpi/Sites/panda.js-launcher/platforms/android/assets/www/plugins/nl.x-services.plugins.insomnia/www \
 /Users/eemelikelokorpi/Sites/panda.js-launcher/platforms/android/assets/www/plugins/nl.x-services.plugins.insomnia/www/Insomnia.js \
+/Users/eemelikelokorpi/Sites/panda.js-launcher/platforms/android/assets/www/plugins/org.apache.cordova.device/www \
+/Users/eemelikelokorpi/Sites/panda.js-launcher/platforms/android/assets/www/plugins/org.apache.cordova.device/www/device.js \
 /Users/eemelikelokorpi/Sites/panda.js-launcher/platforms/android/ant-build/AndroidManifest.xml \

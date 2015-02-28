@@ -32,6 +32,7 @@
 /Users/eemelikelokorpi/Sites/panda.js-launcher/platforms/android/ant-build/classes/nl/xservices/plugins/Insomnia$1.class \
 /Users/eemelikelokorpi/Sites/panda.js-launcher/platforms/android/ant-build/classes/nl/xservices/plugins/Insomnia$2.class \
 /Users/eemelikelokorpi/Sites/panda.js-launcher/platforms/android/ant-build/classes/nl/xservices/plugins/Insomnia.class \
+/Users/eemelikelokorpi/Sites/panda.js-launcher/platforms/android/ant-build/classes/org/apache/cordova/device/Device.class \
 /Users/eemelikelokorpi/Sites/panda.js-launcher/platforms/android/ant-build/classes/org/apache/cordova/R$array.class \
 /Users/eemelikelokorpi/Sites/panda.js-launcher/platforms/android/ant-build/classes/org/apache/cordova/R$attr.class \
 /Users/eemelikelokorpi/Sites/panda.js-launcher/platforms/android/ant-build/classes/org/apache/cordova/R$color.class \

@@ -9,6 +9,7 @@
     </author>
     <content src="index.html" />
     <preference name="Fullscreen" value="true" />
+    <preference name="orientation" value="default" />
     <icon src="res/icon.png" />
     <access origin="*" />
 </widget>

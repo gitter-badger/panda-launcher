@@ -22,6 +22,9 @@
     <feature name="Insomnia">
         <param name="ios-package" value="Insomnia" />
     </feature>
+    <feature name="Device">
+        <param name="ios-package" value="CDVDevice" />
+    </feature>
     <name>Panda Launcher</name>
     <description>
         Launcher application to use with Panda Editor.

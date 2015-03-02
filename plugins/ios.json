@@ -5,12 +5,6 @@
     },
     "config_munge": {
         "files": {
-            "framework": {
-                "parents": {
-                    "WebKit.framework": [],
-                    "libz.dylib": []
-                }
-            },
             "config.xml": {
                 "parents": {
                     "/*": [
@@ -29,10 +23,10 @@
     },
     "installed_plugins": {
         "nl.x-services.plugins.insomnia": {
-            "PACKAGE_NAME": "io.cordova.hellocordova"
+            "PACKAGE_NAME": "com.phonegap.helloworld"
         },
         "org.apache.cordova.device": {
-            "PACKAGE_NAME": "net.pandajs.launcher"
+            "PACKAGE_NAME": "com.phonegap.helloworld"
         }
     },
     "dependent_plugins": {}

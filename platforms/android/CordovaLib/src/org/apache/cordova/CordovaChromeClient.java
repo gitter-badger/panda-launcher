@@ -19,11 +19,10 @@
 package org.apache.cordova;
 
 import org.apache.cordova.CordovaInterface;
-//import org.apache.cordova.LOG;
+import org.apache.cordova.LOG;
 
-//import android.annotation.TargetApi;
+import android.annotation.TargetApi;
 import android.app.AlertDialog;
-import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.net.Uri;
@@ -31,15 +30,18 @@ import android.view.Gravity;
 import android.view.KeyEvent;
 import android.view.View;
 import android.view.ViewGroup.LayoutParams;
+import android.webkit.ConsoleMessage;
+import android.webkit.JsPromptResult;
+import android.webkit.JsResult;
 import android.webkit.ValueCallback;
+import android.webkit.WebChromeClient;
+import android.webkit.WebStorage;
+import android.webkit.WebView;
+import android.webkit.GeolocationPermissions.Callback;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
-
-import org.xwalk.core.XWalkJavascriptResult;
-import org.xwalk.core.XWalkUIClient;
-import org.xwalk.core.XWalkView;
 
 /**
  * This class is the WebChromeClient that implements callbacks for our web view.
@@ -52,26 +54,26 @@ import org.xwalk.core.XWalkView;
  * @see CordovaWebViewClient
  * @see CordovaWebView
  */
-public class CordovaChromeClient extends XWalkUIClient {
+public class CordovaChromeClient extends WebChromeClient {
 
     public static final int FILECHOOSER_RESULTCODE = 5173;
+    private String TAG = "CordovaLog";
+    private long MAX_QUOTA = 100 * 1024 * 1024;
     protected CordovaInterface cordova;
     protected CordovaWebView appView;
 
+    // the video progress view
+    private View mVideoProgressView;
+    
     // File Chooser
     public ValueCallback<Uri> mUploadMessage;
-
-    boolean isCurrentlyLoading;
-    private boolean doClearHistory = false;
     
     @Deprecated
     public CordovaChromeClient(CordovaInterface cordova) {
-        super(null);
         this.cordova = cordova;
     }
 
     public CordovaChromeClient(CordovaInterface ctx, CordovaWebView app) {
-        super(app);
         this.cordova = ctx;
         this.appView = app;
     }
@@ -79,26 +81,6 @@ public class CordovaChromeClient extends XWalkUIClient {
     @Deprecated
     public void setWebView(CordovaWebView view) {
         this.appView = view;
-    }
-
-    @Override
-    public boolean onJavascriptModalDialog(XWalkView view, JavascriptMessageType type, String url,
-            String message, String defaultValue, XWalkJavascriptResult result) {
-        switch(type) {
-            case JAVASCRIPT_ALERT:
-                return onJsAlert(view, url, message, result);
-            case JAVASCRIPT_CONFIRM:
-                return onJsConfirm(view, url, message, result);
-            case JAVASCRIPT_PROMPT:
-                return onJsPrompt(view, url, message, defaultValue, result);
-            case JAVASCRIPT_BEFOREUNLOAD:
-                // Reuse onJsConfirm to show the dialog.
-                return onJsConfirm(view, url, message, result);
-            default:
-                break;
-        }
-        assert(false);
-        return false;
     }
 
     /**
@@ -110,8 +92,8 @@ public class CordovaChromeClient extends XWalkUIClient {
      * @param result
      * @see Other implementation in the Dialogs plugin.
      */
-    private boolean onJsAlert(XWalkView view, String url, String message,
-            final XWalkJavascriptResult result) {
+    @Override
+    public boolean onJsAlert(WebView view, String url, String message, final JsResult result) {
         AlertDialog.Builder dlg = new AlertDialog.Builder(this.cordova.getActivity());
         dlg.setMessage(message);
         dlg.setTitle("Alert");
@@ -154,8 +136,8 @@ public class CordovaChromeClient extends XWalkUIClient {
      * @param result
      * @see Other implementation in the Dialogs plugin.
      */
-    private boolean onJsConfirm(XWalkView view, String url, String message,
-            final XWalkJavascriptResult result) {
+    @Override
+    public boolean onJsConfirm(WebView view, String url, String message, final JsResult result) {
         AlertDialog.Builder dlg = new AlertDialog.Builder(this.cordova.getActivity());
         dlg.setMessage(message);
         dlg.setTitle("Confirm");
@@ -204,14 +186,15 @@ public class CordovaChromeClient extends XWalkUIClient {
      *
      * @see Other implementation in the Dialogs plugin.
      */
-    private boolean onJsPrompt(XWalkView view, String origin, String message, String defaultValue, XWalkJavascriptResult result) {
+    @Override
+    public boolean onJsPrompt(WebView view, String origin, String message, String defaultValue, JsPromptResult result) {
         // Unlike the @JavascriptInterface bridge, this method is always called on the UI thread.
         String handledRet = appView.bridge.promptOnJsPrompt(origin, message, defaultValue);
         if (handledRet != null) {
-            result.confirmWithResult(handledRet);
+            result.confirm(handledRet);
         } else {
             // Returning false would also show a dialog, but the default one shows the origin (ugly).
-            final XWalkJavascriptResult res = result;
+            final JsPromptResult res = result;
             AlertDialog.Builder dlg = new AlertDialog.Builder(this.cordova.getActivity());
             dlg.setMessage(message);
             final EditText input = new EditText(this.cordova.getActivity());
@@ -224,7 +207,7 @@ public class CordovaChromeClient extends XWalkUIClient {
                     new DialogInterface.OnClickListener() {
                         public void onClick(DialogInterface dialog, int which) {
                             String usertext = input.getText().toString();
-                            res.confirmWithResult(usertext);
+                            res.confirm(usertext);
                         }
                     });
             dlg.setNegativeButton(android.R.string.cancel,
@@ -239,92 +222,107 @@ public class CordovaChromeClient extends XWalkUIClient {
     }
 
     /**
-     * Notify the host application that a page has started loading.
-     * This method is called once for each main frame load so a page with iframes or framesets will call onPageStarted
-     * one time for the main frame. This also means that onPageStarted will not be called when the contents of an
-     * embedded frame changes, i.e. clicking a link whose target is an iframe.
-     *
-     * @param view          The webview initiating the callback.
-     * @param url           The url of the page.
+     * Handle database quota exceeded notification.
      */
     @Override
-    public void onPageLoadStarted(XWalkView view, String url) {
-        isCurrentlyLoading = true;
+    public void onExceededDatabaseQuota(String url, String databaseIdentifier, long currentQuota, long estimatedSize,
+            long totalUsedQuota, WebStorage.QuotaUpdater quotaUpdater)
+    {
+        LOG.d(TAG, "onExceededDatabaseQuota estimatedSize: %d  currentQuota: %d  totalUsedQuota: %d", estimatedSize, currentQuota, totalUsedQuota);
+        quotaUpdater.updateQuota(MAX_QUOTA);
+    }
 
-        // Flush stale messages.
-        this.appView.bridge.reset(url);
-
-        // Broadcast message that page has loaded
-        this.appView.postMessage("onPageStarted", url);
-
-        // Notify all plugins of the navigation, so they can clean up if necessary.
-        if (this.appView.pluginManager != null) {
-            this.appView.pluginManager.onReset();
+    // console.log in api level 7: http://developer.android.com/guide/developing/debug-tasks.html
+    // Expect this to not compile in a future Android release!
+    @SuppressWarnings("deprecation")
+    @Override
+    public void onConsoleMessage(String message, int lineNumber, String sourceID)
+    {
+        //This is only for Android 2.1
+        if(android.os.Build.VERSION.SDK_INT == android.os.Build.VERSION_CODES.ECLAIR_MR1)
+        {
+            LOG.d(TAG, "%s: Line %d : %s", sourceID, lineNumber, message);
+            super.onConsoleMessage(message, lineNumber, sourceID);
         }
     }
 
+    @TargetApi(8)
+    @Override
+    public boolean onConsoleMessage(ConsoleMessage consoleMessage)
+    {
+        if (consoleMessage.message() != null)
+            LOG.d(TAG, "%s: Line %d : %s" , consoleMessage.sourceId() , consoleMessage.lineNumber(), consoleMessage.message());
+         return super.onConsoleMessage(consoleMessage);
+    }
+
+    @Override
     /**
-     * Notify the host application that a page has stopped loading.
-     * This method is called only for main frame. When onPageLoadStopped() is called, the rendering picture may not be updated yet.
+     * Instructs the client to show a prompt to ask the user to set the Geolocation permission state for the specified origin.
      *
-     *
-     * @param view          The webview initiating the callback.
-     * @param url           The url of the page.
-     * @param status        The load status of the webview, can be FINISHED, CANCELLED or FAILED.
+     * @param origin
+     * @param callback
      */
+    public void onGeolocationPermissionsShowPrompt(String origin, Callback callback) {
+        super.onGeolocationPermissionsShowPrompt(origin, callback);
+        callback.invoke(origin, true, false);
+    }
+    
+    // API level 7 is required for this, see if we could lower this using something else
     @Override
-    public void onPageLoadStopped(XWalkView view, String url, LoadStatus status) {
-        // Ignore excessive calls.
-        if (!isCurrentlyLoading) {
-            return;
-        }
-        isCurrentlyLoading = false;
-
-        /**
-         * Because of a timing issue we need to clear this history in onPageFinished as well as
-         * onPageStarted. However we only want to do this if the doClearHistory boolean is set to
-         * true. You see when you load a url with a # in it which is common in jQuery applications
-         * onPageStared is not called. Clearing the history at that point would break jQuery apps.
-         */
-        if (this.doClearHistory) {
-            view.getNavigationHistory().clear();
-            this.doClearHistory = false;
-        }
-
-        // Clear timeout flag
-        this.appView.loadUrlTimeout++;
-
-        // Broadcast message that page has loaded
-        this.appView.postMessage("onPageFinished", url);
-
-        // Make app visible after 2 sec in case there was a JS error and Cordova JS never initialized correctly
-        if (this.appView.getVisibility() == View.INVISIBLE) {
-            Thread t = new Thread(new Runnable() {
-                public void run() {
-                    try {
-                        Thread.sleep(2000);
-                        cordova.getActivity().runOnUiThread(new Runnable() {
-                            public void run() {
-                                appView.postMessage("spinner", "stop");
-                            }
-                        });
-                    } catch (InterruptedException e) {
-                    }
-                }
-            });
-            t.start();
-        }
-
-        // Shutdown if blank loaded
-        if (url.equals("about:blank")) {
-            appView.postMessage("exit", null);
-        }
+    public void onShowCustomView(View view, WebChromeClient.CustomViewCallback callback) {
+        this.appView.showCustomView(view, callback);
     }
 
     @Override
-    public void openFileChooser(XWalkView view, ValueCallback<Uri> uploadMsg, String acceptType,
-            String capture) {
-        uploadMsg.onReceiveValue(null);
+    public void onHideCustomView() {
+        this.appView.hideCustomView();
+    }
+    
+    @Override
+    /**
+     * Ask the host application for a custom progress view to show while
+     * a <video> is loading.
+     * @return View The progress view.
+     */
+    public View getVideoLoadingProgressView() {
+
+        if (mVideoProgressView == null) {            
+            // Create a new Loading view programmatically.
+            
+            // create the linear layout
+            LinearLayout layout = new LinearLayout(this.appView.getContext());
+            layout.setOrientation(LinearLayout.VERTICAL);
+            RelativeLayout.LayoutParams layoutParams = new RelativeLayout.LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT);
+            layoutParams.addRule(RelativeLayout.CENTER_IN_PARENT);
+            layout.setLayoutParams(layoutParams);
+            // the proress bar
+            ProgressBar bar = new ProgressBar(this.appView.getContext());
+            LinearLayout.LayoutParams barLayoutParams = new LinearLayout.LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT);
+            barLayoutParams.gravity = Gravity.CENTER;
+            bar.setLayoutParams(barLayoutParams);   
+            layout.addView(bar);
+            
+            mVideoProgressView = layout;
+        }
+    return mVideoProgressView; 
+    }
+    
+    public void openFileChooser(ValueCallback<Uri> uploadMsg) {
+        this.openFileChooser(uploadMsg, "*/*");
+    }
+
+    public void openFileChooser( ValueCallback<Uri> uploadMsg, String acceptType ) {
+        this.openFileChooser(uploadMsg, acceptType, null);
+    }
+    
+    public void openFileChooser(ValueCallback<Uri> uploadMsg, String acceptType, String capture)
+    {
+        mUploadMessage = uploadMsg;
+        Intent i = new Intent(Intent.ACTION_GET_CONTENT);
+        i.addCategory(Intent.CATEGORY_OPENABLE);
+        i.setType("*/*");
+        this.cordova.getActivity().startActivityForResult(Intent.createChooser(i, "File Browser"),
+                FILECHOOSER_RESULTCODE);
     }
     
     public ValueCallback<Uri> getValueCallback() {

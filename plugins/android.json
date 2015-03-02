@@ -23,7 +23,7 @@
     },
     "installed_plugins": {
         "nl.x-services.plugins.insomnia": {
-            "PACKAGE_NAME": "io.cordova.hellocordova"
+            "PACKAGE_NAME": "net.pandajs.launcher"
         },
         "org.apache.cordova.device": {
             "PACKAGE_NAME": "net.pandajs.launcher"

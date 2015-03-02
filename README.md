@@ -1,17 +1,17 @@
 # Panda Launcher
 
-### Mobile application to connect your devices into Panda Editor
+### Connect your mobile devices into Panda Editor
 
 ## Install
 
 Panda Launcher is available on app store for Android, iOS and Windows Phone.
 
-You can also install it using [Cordova](http://www.cordova.io):
+You can also install it using [PhoneGap](http://phonegap.com/):
 
-	$ sudo npm install -g cordova
+	$ sudo npm install -g phonegap
 	$ git clone https://github.com/ekelokorpi/panda.js-launcher.git
 	$ cd panda.js-launcher
-	$ cordova run android
+	$ phonegap run android
 
 ## Usage
 

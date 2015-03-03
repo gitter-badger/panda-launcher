@@ -1,0 +1,18 @@
+2015-03-03 12:25:29.999 Panda Launcher[79054:2996775] DiskCookieStorage changing policy from 2 to 0, cookie file: file:///Users/eemelikelokorpi/Library/Developer/CoreSimulator/Devices/4E7D95C2-BE8A-4E88-ABAE-B5A73905478D/data/Containers/Data/Application/7B2C8883-FB84-4E56-BF30-9F2B733A491E/Library/Cookies/Cookies.binarycookies
+2015-03-03 12:25:30.347 Panda Launcher[79054:2996775] Apache Cordova native platform version 3.7.0 is starting.
+2015-03-03 12:25:30.347 Panda Launcher[79054:2996775] Multi-tasking -> Device: YES, App: YES
+2015-03-03 12:25:30.376 Panda Launcher[79054:2996775] Unlimited access to network resources
+2015-03-03 12:25:30.388 Panda Launcher[79054:2996775] 
+
+Started backup to iCloud! Please be careful.
+Your application might be rejected by Apple if you store too much data.
+For more information please read "iOS Data Storage Guidelines" at:
+https://developer.apple.com/icloud/documentation/data-storage/
+To disable web storage backup to iCloud, set the BackupWebStorage preference to "local" in the Cordova config.xml file
+
+2015-03-03 12:25:31.615 Panda Launcher[79054:2996775] Resetting plugins due to page load.
+2015-03-03 12:25:31.762 Panda Launcher[79054:2996775] Finished load of: file:///Users/eemelikelokorpi/Library/Developer/CoreSimulator/Devices/4E7D95C2-BE8A-4E88-ABAE-B5A73905478D/data/Containers/Bundle/Application/10762846-2A2C-48F6-A288-113ABC40F455/Panda%20Launcher.app/www/index.html
+2015-03-03 12:26:01.718 Panda Launcher[79054:2996775] Resetting plugins due to page load.
+>>>> frameSizeChanged = 4096
+>>>> frameSizeChanged = 4096
+2015-03-03 12:26:02.695 Panda Launcher[79054:2996775] Finished load of: http://127.0.0.1:3000/dev.html?platform=iOS&model=x86_64&1425378361711

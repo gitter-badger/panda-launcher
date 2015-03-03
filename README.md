@@ -1,6 +1,6 @@
 # Panda Launcher
 
-### Connect your mobile devices into Panda Editor
+### Connect your mobile devices to Panda Editor
 
 ## Install
 

@@ -15,6 +15,10 @@
                         {
                             "xml": "<feature name=\"Device\"><param name=\"ios-package\" value=\"CDVDevice\" /></feature>",
                             "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"AppVersion\"><param name=\"ios-package\" value=\"AppVersion\" /></feature>",
+                            "count": 1
                         }
                     ]
                 }
@@ -27,6 +31,9 @@
         },
         "org.apache.cordova.device": {
             "PACKAGE_NAME": "com.phonegap.helloworld"
+        },
+        "uk.co.whiteoctober.cordova.appversion": {
+            "PACKAGE_NAME": "net.pandajs.launcher"
         }
     },
     "dependent_plugins": {}

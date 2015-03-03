@@ -7,6 +7,9 @@
     <feature name="Device">
         <param name="android-package" value="org.apache.cordova.device.Device" />
     </feature>
+    <feature name="AppVersion">
+        <param name="android-package" value="uk.co.whiteoctober.cordova.AppVersion" />
+    </feature>
     <name>Panda Launcher</name>
     <description>
         Hello World sample application that responds to the deviceready event.

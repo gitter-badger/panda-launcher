@@ -1,6 +1,6 @@
 # Panda Launcher
 
-### Connect your mobile devices to Panda Editor
+### Mobile app to connect your devices into Panda Editor
 
 ## Install
 
@@ -19,3 +19,14 @@ You can also install it using [PhoneGap](http://phonegap.com/):
 1. Download and launch the app
 2. Enter your `ip-address` and press `Connect`
 3. You should now see Panda Editor project on your device
+
+## Support
+
+- [Panda.js forum](http://www.html5gamedevs.com/forum/19-pandajs/)
+- [Panda Launcher chat](https://gitter.im/ekelokorpi/panda.js-launcher)
+
+## License
+
+Panda Launcher is released under the [MIT License](http://opensource.org/licenses/MIT).
+
+Financed by [Yleisradio](http://en.wikipedia.org/wiki/Yle).

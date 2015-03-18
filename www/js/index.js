@@ -1,13 +1,12 @@
 var app = {
     init: function() {
-        this.address = document.getElementById('address');
-        this.address.value = localStorage.getItem('address') || '127.0.0.1:3000';
-
+        this.address = $('#address');
+        this.address.attr('placeholder', localStorage.getItem('address') || '127.0.0.1:3000');
         $(document).on('deviceready', this.ready.bind(this));
     },
 
     ready: function() {
-        cordova.getAppVersion.getVersionNumber(function (version) {
+        cordova.getAppVersion.getVersionNumber(function(version) {
             $('.version').html(version);
         });
 
@@ -35,7 +34,7 @@ var app = {
 
     connect: function(event) {
         event.preventDefault();
-        var address = this.address.value;
+        var address = this.address.val() || this.address.attr('placeholder');
         if (!address) return;
 
         localStorage.setItem('address', address);

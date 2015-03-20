@@ -6,10 +6,6 @@ var app = {
     },
 
     ready: function() {
-        cordova.getAppVersion.getVersionNumber(function(version) {
-            $('.version').html(version);
-        });
-
         window.plugins.insomnia.allowSleepAgain();
 
         $('.connect a').on('touchstart', function() {

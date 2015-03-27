@@ -15,10 +15,6 @@
                         {
                             "xml": "<feature name=\"Device\"><param name=\"wp-package\" value=\"Device\" /></feature>",
                             "count": 1
-                        },
-                        {
-                            "xml": "<feature name=\"AppVersion\"><param name=\"wp-package\" value=\"AppVersion\" /></feature>",
-                            "count": 1
                         }
                     ]
                 }
@@ -37,13 +33,10 @@
     },
     "installed_plugins": {
         "nl.x-services.plugins.insomnia": {
-            "PACKAGE_NAME": "{066dfbb0-c1b5-11e4-a698-ddba0fd3c80b}"
+            "PACKAGE_NAME": "{da148ec0-d475-11e4-bed6-d5fa609d695d}"
         },
         "org.apache.cordova.device": {
-            "PACKAGE_NAME": "{066dfbb0-c1b5-11e4-a698-ddba0fd3c80b}"
-        },
-        "uk.co.whiteoctober.cordova.appversion": {
-            "PACKAGE_NAME": "{066dfbb0-c1b5-11e4-a698-ddba0fd3c80b}"
+            "PACKAGE_NAME": "{da148ec0-d475-11e4-bed6-d5fa609d695d}"
         }
     },
     "dependent_plugins": {}

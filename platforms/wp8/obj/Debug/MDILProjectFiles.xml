@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Files>
+  <XAPFiles>
+    <File>resources.pri</File>
+    <File>net.pandajs.launcher.dll</File>
+    <File>Assets\BadgeLogo.png</File>
+    <File>Assets\Logo.png</File>
+    <File>Assets\SplashScreen.png</File>
+    <File>Assets\SquareTile150x150.png</File>
+    <File>Assets\SquareTile71x71.png</File>
+    <File>Assets\StoreLogo.png</File>
+    <File>Assets\WideLogo.png</File>
+    <File>config.xml</File>
+    <File>www\cordova.js</File>
+    <File>www\cordova_plugins.js</File>
+    <File>www\css\index.css</File>
+    <File>www\img\panda.png</File>
+    <File>www\index.html</File>
+    <File>www\js\index.js</File>
+    <File>www\js\zepto.min.js</File>
+    <File>www\plugins\nl.x-services.plugins.insomnia\www\Insomnia.js</File>
+    <File>www\plugins\org.apache.cordova.device\www\device.js</File>
+    <File>Images\appbar.back.rest.png</File>
+    <File>Images\appbar.close.rest.png</File>
+    <File>Images\appbar.feature.video.rest.png</File>
+    <File>Images\appbar.next.rest.png</File>
+    <File>Images\appbar.save.rest.png</File>
+    <File>Images\appbar.stop.rest.png</File>
+    <File>VERSION</File>
+    <File>SplashScreenImage.jpg</File>
+    <File>AppManifest.xaml</File>
+    <File>ApplicationIcon.png</File>
+    <File>Background.png</File>
+    <File>WMAppManifest.xml</File>
+    <File>AppxManifest.xml</File>
+  </XAPFiles>
+  <APPXFiles />
+</Files>

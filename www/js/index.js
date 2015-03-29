@@ -25,7 +25,7 @@ var app = {
 
     onSuccess: function(address) {
         window.plugins.insomnia.keepAwake();
-        window.location = address + '/dev.html?platform=' + device.platform + '&model=' + device.model + '&' + Date.now();
+        window.location = address + '/?platform=' + device.platform + '&model=' + device.model + '&' + Date.now();
     },
 
     connect: function(event) {

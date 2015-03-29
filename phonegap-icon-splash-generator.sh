@@ -13,6 +13,8 @@ set -x
 
 convert="convert -background none"
 
+cp "$1" "$3/res/icon/icon.png"
+
 # Icons for app stores
 $convert "$1" -resize 128x128 "$3/res/icon/icon_128x128.png"
 $convert "$1" -resize 512x512 "$3/res/icon/icon_512x512.png"

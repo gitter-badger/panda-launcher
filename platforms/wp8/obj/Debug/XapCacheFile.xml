@@ -1,6 +1,6 @@
-﻿<xapCache source="Z:\Sites\panda.js-launcher\platforms\wp8\Bin\Debug\Panda_Launcher_Debug_AnyCPU.xap" wasSigned="False" wasTritonized="False" certificateThumbprint="" TimeStampUrl="" signKeyFile="" signKeyPassword="" lastWriteTime="27.3.2015 16:56:08">
-  <file source="Z:\Sites\panda.js-launcher\platforms\wp8\Bin\Debug\resources.pri" archivePath="resources.pri" lastWriteTime="27.3.2015 16:56:06" />
-  <file source="Z:\Sites\panda.js-launcher\platforms\wp8\obj\Debug\net.pandajs.launcher.dll" archivePath="net.pandajs.launcher.dll" lastWriteTime="27.3.2015 16:56:06" />
+﻿<xapCache source="Z:\Sites\panda.js-launcher\platforms\wp8\Bin\Debug\Panda_Launcher_Debug_AnyCPU.xap" wasSigned="False" wasTritonized="False" certificateThumbprint="" TimeStampUrl="" signKeyFile="" signKeyPassword="" lastWriteTime="30.3.2015 11:39:17">
+  <file source="Z:\Sites\panda.js-launcher\platforms\wp8\Bin\Debug\resources.pri" archivePath="resources.pri" lastWriteTime="30.3.2015 11:05:21" />
+  <file source="Z:\Sites\panda.js-launcher\platforms\wp8\obj\Debug\net.pandajs.launcher.dll" archivePath="net.pandajs.launcher.dll" lastWriteTime="30.3.2015 11:05:20" />
   <file source="Z:\Sites\panda.js-launcher\platforms\wp8\Assets\BadgeLogo.png" archivePath="Assets\BadgeLogo.png" lastWriteTime="27.3.2015 16:55:12" />
   <file source="Z:\Sites\panda.js-launcher\platforms\wp8\Assets\Logo.png" archivePath="Assets\Logo.png" lastWriteTime="27.3.2015 16:55:12" />
   <file source="Z:\Sites\panda.js-launcher\platforms\wp8\Assets\SplashScreen.png" archivePath="Assets\SplashScreen.png" lastWriteTime="27.3.2015 16:55:12" />
@@ -8,16 +8,16 @@
   <file source="Z:\Sites\panda.js-launcher\platforms\wp8\Assets\SquareTile71x71.png" archivePath="Assets\SquareTile71x71.png" lastWriteTime="27.3.2015 16:55:12" />
   <file source="Z:\Sites\panda.js-launcher\platforms\wp8\Assets\StoreLogo.png" archivePath="Assets\StoreLogo.png" lastWriteTime="27.3.2015 16:55:12" />
   <file source="Z:\Sites\panda.js-launcher\platforms\wp8\Assets\WideLogo.png" archivePath="Assets\WideLogo.png" lastWriteTime="27.3.2015 16:55:12" />
-  <file source="Z:\Sites\panda.js-launcher\platforms\wp8\config.xml" archivePath="config.xml" lastWriteTime="27.3.2015 13:42:45" />
-  <file source="Z:\Sites\panda.js-launcher\platforms\wp8\www\cordova.js" archivePath="www\cordova.js" lastWriteTime="27.3.2015 13:42:44" />
-  <file source="Z:\Sites\panda.js-launcher\platforms\wp8\www\cordova_plugins.js" archivePath="www\cordova_plugins.js" lastWriteTime="27.3.2015 13:42:45" />
-  <file source="Z:\Sites\panda.js-launcher\platforms\wp8\www\css\index.css" archivePath="www\css\index.css" lastWriteTime="27.3.2015 13:42:44" />
-  <file source="Z:\Sites\panda.js-launcher\platforms\wp8\www\img\panda.png" archivePath="www\img\panda.png" lastWriteTime="27.3.2015 13:42:44" />
-  <file source="Z:\Sites\panda.js-launcher\platforms\wp8\www\index.html" archivePath="www\index.html" lastWriteTime="27.3.2015 13:42:44" />
-  <file source="Z:\Sites\panda.js-launcher\platforms\wp8\www\js\index.js" archivePath="www\js\index.js" lastWriteTime="27.3.2015 13:42:44" />
-  <file source="Z:\Sites\panda.js-launcher\platforms\wp8\www\js\zepto.min.js" archivePath="www\js\zepto.min.js" lastWriteTime="27.3.2015 13:42:44" />
-  <file source="Z:\Sites\panda.js-launcher\platforms\wp8\www\plugins\nl.x-services.plugins.insomnia\www\Insomnia.js" archivePath="www\plugins\nl.x-services.plugins.insomnia\www\Insomnia.js" lastWriteTime="27.3.2015 13:42:45" />
-  <file source="Z:\Sites\panda.js-launcher\platforms\wp8\www\plugins\org.apache.cordova.device\www\device.js" archivePath="www\plugins\org.apache.cordova.device\www\device.js" lastWriteTime="27.3.2015 13:42:45" />
+  <file source="Z:\Sites\panda.js-launcher\platforms\wp8\config.xml" archivePath="config.xml" lastWriteTime="30.3.2015 11:34:41" />
+  <file source="Z:\Sites\panda.js-launcher\platforms\wp8\www\cordova.js" archivePath="www\cordova.js" lastWriteTime="30.3.2015 11:34:38" />
+  <file source="Z:\Sites\panda.js-launcher\platforms\wp8\www\cordova_plugins.js" archivePath="www\cordova_plugins.js" lastWriteTime="30.3.2015 11:34:40" />
+  <file source="Z:\Sites\panda.js-launcher\platforms\wp8\www\css\index.css" archivePath="www\css\index.css" lastWriteTime="30.3.2015 11:34:38" />
+  <file source="Z:\Sites\panda.js-launcher\platforms\wp8\www\img\panda.png" archivePath="www\img\panda.png" lastWriteTime="30.3.2015 11:34:38" />
+  <file source="Z:\Sites\panda.js-launcher\platforms\wp8\www\index.html" archivePath="www\index.html" lastWriteTime="30.3.2015 11:34:38" />
+  <file source="Z:\Sites\panda.js-launcher\platforms\wp8\www\js\index.js" archivePath="www\js\index.js" lastWriteTime="30.3.2015 11:34:38" />
+  <file source="Z:\Sites\panda.js-launcher\platforms\wp8\www\js\zepto.min.js" archivePath="www\js\zepto.min.js" lastWriteTime="30.3.2015 11:34:38" />
+  <file source="Z:\Sites\panda.js-launcher\platforms\wp8\www\plugins\nl.x-services.plugins.insomnia\www\Insomnia.js" archivePath="www\plugins\nl.x-services.plugins.insomnia\www\Insomnia.js" lastWriteTime="30.3.2015 11:34:40" />
+  <file source="Z:\Sites\panda.js-launcher\platforms\wp8\www\plugins\org.apache.cordova.device\www\device.js" archivePath="www\plugins\org.apache.cordova.device\www\device.js" lastWriteTime="30.3.2015 11:34:40" />
   <file source="Z:\Sites\panda.js-launcher\platforms\wp8\Images\appbar.back.rest.png" archivePath="Images\appbar.back.rest.png" lastWriteTime="27.3.2015 13:38:56" />
   <file source="Z:\Sites\panda.js-launcher\platforms\wp8\Images\appbar.close.rest.png" archivePath="Images\appbar.close.rest.png" lastWriteTime="27.3.2015 13:38:56" />
   <file source="Z:\Sites\panda.js-launcher\platforms\wp8\Images\appbar.feature.video.rest.png" archivePath="Images\appbar.feature.video.rest.png" lastWriteTime="27.3.2015 13:38:56" />
@@ -25,11 +25,11 @@
   <file source="Z:\Sites\panda.js-launcher\platforms\wp8\Images\appbar.save.rest.png" archivePath="Images\appbar.save.rest.png" lastWriteTime="27.3.2015 13:38:56" />
   <file source="Z:\Sites\panda.js-launcher\platforms\wp8\Images\appbar.stop.rest.png" archivePath="Images\appbar.stop.rest.png" lastWriteTime="27.3.2015 13:38:56" />
   <file source="Z:\Sites\panda.js-launcher\platforms\wp8\VERSION" archivePath="VERSION" lastWriteTime="27.3.2015 13:38:56" />
-  <file source="Z:\Sites\panda.js-launcher\platforms\wp8\SplashScreenImage.jpg" archivePath="SplashScreenImage.jpg" lastWriteTime="27.3.2015 13:42:45" />
+  <file source="Z:\Sites\panda.js-launcher\platforms\wp8\SplashScreenImage.jpg" archivePath="SplashScreenImage.jpg" lastWriteTime="30.3.2015 11:34:41" />
   <file source="Z:\Sites\panda.js-launcher\platforms\wp8\Bin\Debug\AppManifest.xaml" archivePath="AppManifest.xaml" lastWriteTime="27.3.2015 16:56:08" />
-  <file source="Z:\Sites\panda.js-launcher\platforms\wp8\Bin\Debug\ApplicationIcon.png" archivePath="ApplicationIcon.png" lastWriteTime="27.3.2015 13:42:45" />
-  <file source="Z:\Sites\panda.js-launcher\platforms\wp8\Bin\Debug\Background.png" archivePath="Background.png" lastWriteTime="27.3.2015 13:42:45" />
+  <file source="Z:\Sites\panda.js-launcher\platforms\wp8\Bin\Debug\ApplicationIcon.png" archivePath="ApplicationIcon.png" lastWriteTime="30.3.2015 11:34:41" />
+  <file source="Z:\Sites\panda.js-launcher\platforms\wp8\Bin\Debug\Background.png" archivePath="Background.png" lastWriteTime="30.3.2015 11:34:41" />
   <file source="Z:\Sites\panda.js-launcher\platforms\wp8\Bin\Debug\Properties\WMAppManifest.xml" archivePath="WMAppManifest.xml" lastWriteTime="27.3.2015 16:56:08" />
-  <file source="Z:\Sites\panda.js-launcher\platforms\wp8\obj\Debug\MDILProjectFiles.xml" archivePath="MDILProjectFiles.xml" lastWriteTime="27.3.2015 16:56:08" />
-  <file source="Z:\Sites\panda.js-launcher\platforms\wp8\Bin\Debug\AppxManifest.xml" archivePath="AppxManifest.xml" lastWriteTime="27.3.2015 16:56:07" />
+  <file source="Z:\Sites\panda.js-launcher\platforms\wp8\obj\Debug\MDILProjectFiles.xml" archivePath="MDILProjectFiles.xml" lastWriteTime="30.3.2015 11:39:16" />
+  <file source="Z:\Sites\panda.js-launcher\platforms\wp8\Bin\Debug\AppxManifest.xml" archivePath="AppxManifest.xml" lastWriteTime="30.3.2015 11:05:22" />
 </xapCache>

@@ -4,7 +4,7 @@
 
 ## Install
 
-Panda Launcher is available on app store for Android, iOS and Windows Phone.
+Panda Launcher is available on app stores for Android, iOS and Windows Phone.
 
 You can also install it using [PhoneGap](http://phonegap.com/):
 

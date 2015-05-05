@@ -9,11 +9,11 @@
                 "parents": {
                     "/*": [
                         {
-                            "xml": "<feature name=\"Insomnia\"><param name=\"android-package\" value=\"nl.xservices.plugins.Insomnia\" /></feature>",
+                            "xml": "<feature name=\"Device\"><param name=\"android-package\" value=\"org.apache.cordova.device.Device\" /></feature>",
                             "count": 1
                         },
                         {
-                            "xml": "<feature name=\"Device\"><param name=\"android-package\" value=\"org.apache.cordova.device.Device\" /></feature>",
+                            "xml": "<feature name=\"Insomnia\"><param name=\"android-package\" value=\"nl.xservices.plugins.Insomnia\" /></feature>",
                             "count": 1
                         }
                     ]
@@ -22,10 +22,10 @@
         }
     },
     "installed_plugins": {
-        "nl.x-services.plugins.insomnia": {
+        "org.apache.cordova.device": {
             "PACKAGE_NAME": "net.pandajs.launcher"
         },
-        "org.apache.cordova.device": {
+        "nl.x-services.plugins.insomnia": {
             "PACKAGE_NAME": "net.pandajs.launcher"
         }
     },

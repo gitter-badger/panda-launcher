@@ -19,11 +19,11 @@
     <feature name="LocalStorage">
         <param name="ios-package" value="CDVLocalStorage" />
     </feature>
-    <feature name="Insomnia">
-        <param name="ios-package" value="Insomnia" />
-    </feature>
     <feature name="Device">
         <param name="ios-package" value="CDVDevice" />
+    </feature>
+    <feature name="Insomnia">
+        <param name="ios-package" value="Insomnia" />
     </feature>
     <icon height="180" src="res/icon/ios/icon-60@3x.png" width="180" />
     <icon height="60" src="res/icon/ios/icon-60.png" width="60" />

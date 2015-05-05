@@ -1,1 +1,0 @@
-Z:\Sites\panda.js-launcher\platforms\wp8\Panda_Launcher.csproj;neutral
